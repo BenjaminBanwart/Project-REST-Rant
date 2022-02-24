@@ -29,6 +29,7 @@ places
 | state | String |
 | cuisines | String |
 | pic | String |
+
 rants
 | Field | Type |
 | ----- | ---- |
