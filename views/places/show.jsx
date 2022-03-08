@@ -7,9 +7,10 @@ function show ({place, id}) {
             <main>
                 <div>
                     <h1>{place.name}</h1>
-                    <p>{place.city}, {place.state}</p>
+                    <h3>Located in {place.city}, {place.state}</h3>
                     <img src={place.pic}></img>
-                    <p>{place.cuisines}</p>
+                    <h3>{place.showEstablished()}</h3>
+                    <h4>Serving {place.cuisines}</h4>
                     <h2>Rating</h2>
                     <p>Not Rated</p>
                     <h2>Comments</h2>
