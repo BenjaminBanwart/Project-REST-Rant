@@ -7,7 +7,21 @@ function show ({place, id}) {
             No comments yet!
         </h3>
     )
+    let rating = (
+        <h3 className="inactive">
+            Not yet rated!
+        </h3>
+    )
     if (place.comments.length) {
+        let sumRatings = place.comments.reduce((tot, c) => {
+            return tot + c.stars
+            }, 0)
+            let averageRating = sumRatings / place.comments.length
+            rating = (
+                <h3>
+                    {Math.round(averageRating)} stars
+                </h3>
+            )
         comments = place.comments.map(c => {
             return (
                 <div className="border">
@@ -24,17 +38,20 @@ function show ({place, id}) {
     return (
         <Def>
             <main>
-                <div>
-                    <h1>{place.name}</h1>
-                    <h3>Located in {place.city}, {place.state}</h3>
-                    <img src={place.pic}></img>
-                    <h3>{place.showEstablished()}</h3>
-                    <h4>Serving {place.cuisines}</h4>
+                <div className='row'>
+                    <div className='col-sm-8'>
+                    <h1 className='col-sm-4'>{place.name}</h1>
+                    <h3 className='col-sm-4'>Located in {place.city}, {place.state}</h3>
+                    </div>
+                    <img src={place.pic} className='col-sm-4'></img>
+                    <h3 className='col-sm-4'>{place.showEstablished()}</h3>
+                    <h4 className='col-sm-4'>Serving {place.cuisines}</h4>
                     <h2>Rating</h2>
-                    <p>Not Rated</p>
+                    {rating}
+                    <br />
                     <h2>Comments</h2>
                     {comments}
-                    <a href={`/places/${id}/edit`} className="btn btn-warning">Edit</a> 
+                    <a href={`/places/${id}/edit`} className="btn btn-warning" >Edit</a> 
                     <form method='POST' action={`/places/${id}?_method=DELETE`}>
                         <button type='submit' className='btn btn-danger'>Delete</button>
                     </form>
