@@ -15,13 +15,17 @@ function show ({place, id}) {
     if (place.comments.length) {
         let sumRatings = place.comments.reduce((tot, c) => {
             return tot + c.stars
-            }, 0)
-            let averageRating = sumRatings / place.comments.length
-            rating = (
-                <h3>
-                    {Math.round(averageRating)} stars
-                </h3>
-            )
+        }, 0)
+        let averageRating = Math.round(sumRatings / place.comments.length)
+        let stars = ''
+        for (let i = 0; i < averageRating; i++) {
+            stars += '⭐️'
+        }
+        rating = (
+            <h3>
+                {stars} stars
+            </h3>
+        )
         comments = place.comments.map(c => {
             return (
                 <div className="border">
@@ -40,8 +44,8 @@ function show ({place, id}) {
             <main>
                 <div className='row'>
                     <div className='col-sm-8'>
-                    <h1 className='col-sm-4'>{place.name}</h1>
-                    <h3 className='col-sm-4'>Located in {place.city}, {place.state}</h3>
+                        <h1 className='col-sm-4'>{place.name}</h1>
+                        <h3 className='col-sm-4'>Located in {place.city}, {place.state}</h3>
                     </div>
                     <img src={place.pic} className='col-sm-4'></img>
                     <h3 className='col-sm-4'>{place.showEstablished()}</h3>
@@ -50,7 +54,9 @@ function show ({place, id}) {
                     {rating}
                     <br />
                     <h2>Comments</h2>
-                    {comments}
+                    <div className='col-sm-6'>
+                        {comments}
+                    </div>
                     <a href={`/places/${id}/edit`} className="btn btn-warning" >Edit</a> 
                     <form method='POST' action={`/places/${id}?_method=DELETE`}>
                         <button type='submit' className='btn btn-danger'>Delete</button>
