@@ -6,7 +6,6 @@ function home () {
         <Def>
             <main>
                 <h1>Rest-Rant</h1>
-                <a href='/places'>Come see the places</a>
                 <div>
                     <img src='/images/food.jpg' alt='Image of a full meal' ></img>
                     <div>
