@@ -1,6 +1,7 @@
 {
   "name": "rest-rant",
   "version": "1.0.0",
+  "engine": "16.13.1",
   "description": "",
   "main": "index.js",
   "scripts": {
