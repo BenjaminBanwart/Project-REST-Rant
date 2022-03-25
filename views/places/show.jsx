@@ -29,7 +29,7 @@ function show ({place, id}) {
         comments = place.comments.map(c => {
             return (
                 <div className="border">
-                    <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
+                    <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😄'}</h2>
                     <h4>{c.content}</h4>
                     <h3>
                         <stong>- {c.author}</stong>
