@@ -1,7 +1,7 @@
 # Project REST-Rant
 REST-Rant is an app where users can review restaurants.
 
-Access this app at the following link https://rest-rant-project-1.herokuapp.com/
+Access this app at the following link https://rest-rant-application.herokuapp.com/
 ## Technologies
 - CSS Framework: Bootstrap
 - Stack: MongoDB, Express, NodeJS
