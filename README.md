@@ -4,7 +4,7 @@ REST-Rant is an app where users can review restaurants.
 Access this app at the following link https://rest-rant-application.herokuapp.com/
 ## Technologies
 - CSS Framework: Bootstrap
-- Stack: MongoDB, Express, NodeJS
+- Stack: MongoDB, Express, NodeJS, React
 - Server-Side Rendering: JSX
 - Node Modules: method-override, dotenv, express-react-views
 ## Routes
